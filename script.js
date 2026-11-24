@@ -107,12 +107,12 @@
     { type: 'choice', prompt: 'Jaká značka ve vývojovém diagramu slouží k načtení vstupu „Čti: A“?', answers: ['Obdélník', 'Kosočtverec', 'Kosodélník', 'Ovál'], correct: 2, explanation: 'Vstup i výstup se zapisuje do kosodélníku.' },
     { type: 'choice', prompt: 'Která vlastnost zajišťuje stejný výsledek při stejných vstupech?', answers: ['Obecnost', 'Srozumitelnost', 'Opakovatelnost', 'Konečnost'], correct: 2, explanation: 'Opakovatelnost (determinismus) znamená stejné výsledky pro stejné vstupy.' },
     { type: 'text', prompt: 'Vyjmenuj všech šest vlastností správného algoritmu.', placeholder: 'Např. konečnost, věcná správnost…', check: (value) => {
-      const names = ['konečnost', 'věcná správnost', 'jednoznačnost', 'obecnost', 'opakovatelnost', 'srozumitelnost'];
+      const names = ['konecnost', 'vecna spravnost', 'jednoznacnost', 'obecnost', 'opakovatelnost', 'srozumitelnost'];
       return names.every((name) => value.includes(name));
     }, expected: 'Konečnost, věcná správnost, jednoznačnost, obecnost, opakovatelnost a srozumitelnost.', explanation: 'Všechny tyto vlastnosti jsou uvedeny v části o správném algoritmu.' },
     { type: 'text', prompt: 'Uveď dvě podmínky řešitelnosti, které je třeba ošetřit u dělení a odmocniny.', placeholder: 'Co musí platit pro jmenovatel a výraz pod odmocninou?', check: (value) => {
       const division = value.includes('nul') && (value.includes('jmenovatel') || value.includes('del') || value.includes('dělen'));
-      const root = (value.includes('odmocnin') || value.includes('odmoc')) && (value.includes('zaporn') || value.includes('záporn') || value.includes('nezaporn') || value.includes('nezáporn') || value.includes('kladn') || value.includes('kladn'));
+      const root = (value.includes('odmocnin') || value.includes('odmoc')) && (value.includes('zaporn') || value.includes('nezaporn') || value.includes('kladn'));
       return division && root;
     }, expected: 'Jmenovatel nesmí být nula a výraz pod odmocninou nesmí být záporný (v oboru reálných čísel).', explanation: 'Obě podmínky musí být ošetřené před samotným výpočtem.' },
     { type: 'text', prompt: 'Jak se liší AND a OR? Popiš, kdy výsledek každé operace bude pravda.', placeholder: 'AND je pravda, když… OR je pravda, když…', check: (value) => {
