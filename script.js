@@ -4,6 +4,27 @@
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
+  // W3C validátory mohou načíst zdroj jen z veřejné URL, například z GitHub Pages.
+  const htmlValidator = $('[data-validator-html]');
+  const cssValidator = $('[data-validator-css]');
+  const validatorStatus = $('[data-validator-status]');
+  const isPublicPage = /^https?:$/.test(window.location.protocol)
+    && !['localhost', '127.0.0.1', '::1'].includes(window.location.hostname);
+  if (isPublicPage) {
+    const pageUrl = window.location.href;
+    const cssUrl = new URL('style.css', pageUrl).href;
+    htmlValidator.href = `https://validator.w3.org/nu/?doc=${encodeURIComponent(pageUrl)}`;
+    cssValidator.href = `https://jigsaw.w3.org/css-validator/validator?uri=${encodeURIComponent(cssUrl)}`;
+  } else {
+    const showLocalNotice = (event) => {
+      event.preventDefault();
+      validatorStatus.hidden = false;
+      validatorStatus.textContent = 'W3C validátory potřebují veřejnou adresu stránky. Po publikaci na GitHub Pages na ikonu klikni znovu.';
+    };
+    htmlValidator.addEventListener('click', showLocalNotice);
+    cssValidator.addEventListener('click', showLocalNotice);
+  }
+
   // Mobilní navigace
   const menuButton = $('.menu-toggle');
   const navigation = $('#site-nav');
@@ -221,7 +242,7 @@
     }
     responses[current] = { rawAnswer, correct };
     submitted = true;
-    feedback.classList.add(correct ? 'correct' : '');
+    if (correct) feedback.classList.add('correct');
     feedback.textContent = correct ? '✓ Správně. ' + item.explanation : 'Ještě ne. ' + item.explanation;
     nextButton.innerHTML = current === questions.length - 1 ? 'Zobrazit výsledek <span aria-hidden="true">→</span>' : 'Pokračovat <span aria-hidden="true">→</span>';
   });
@@ -261,7 +282,7 @@
       form.hidden = false;
       resultNode.hidden = true;
       renderQuestion();
-      questionText.focus?.();
+      answersNode.querySelector('input')?.focus();
     });
     actions.append(retry);
     resultNode.replaceChildren(summary, review, actions);

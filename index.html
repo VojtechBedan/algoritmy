@@ -26,23 +26,21 @@
     <section class="hero section-shell" id="domu" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="eyebrow"><span class="live-dot"></span> ZÁKLADY ALGORITMIZACE <span class="eyebrow-line"></span> 8 MIN ČTENÍ</p>
-        <h1 id="hero-title">Dobrý nápad.<br><span>Jasný postup.</span></h1>
+        <h1 id="hero-title">Algoritmy.<br><span>Jasný postup.</span></h1>
         <p class="hero-lead">Počítač si sám neporadí. Potřebuje přesné kroky. Nauč se, jak je vymyslet, zapsat a ověřit.</p>
         <div class="hero-actions"><a class="button button-primary" href="#zaklady">Začít se učit <span aria-hidden="true">↓</span></a><a class="text-link" href="#diagramy">Prohlédnout diagramy <span aria-hidden="true">↗</span></a></div>
         <div class="hero-meta"><span class="meta-icon">01</span><span>Od principu až k vlastnímu řešení</span></div>
       </div>
       <div class="hero-visual" aria-label="Ukázkový vývojový diagram pro výpočet součtu" role="img">
-        <div class="visual-top"><span><i></i><i></i><i></i> ukázka-postupu.alg</span><span>FLOW / 01</span></div>
+        <div class="visual-top"><span><i></i><i></i><i></i></span><span>FLOW / 01</span></div>
         <svg class="hero-flow" viewBox="0 0 500 365" aria-hidden="true">
           <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#65738a"/></marker><filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-          <path class="flow-line" d="M250 55V88M250 132V163M250 205V236M250 279V309" marker-end="url(#arrow)"/>
-          <path class="flow-line" d="M290 184H388V252H290" marker-end="url(#arrow)"/>
+          <path class="flow-line" d="M250 55V88M250 132V159M250 204V231M250 276V309" marker-end="url(#arrow)"/>
           <rect class="flow-node node-terminal" x="184" y="15" width="132" height="40" rx="20"/><text x="250" y="40" class="flow-text">ZAČÁTEK</text>
           <path class="flow-node node-io" d="M201 88H315L299 132H185Z"/><text x="250" y="115" class="flow-text">ČTI A, B</text>
-          <path class="flow-node node-decision" d="M250 163L290 184L250 205L210 184Z"/><text x="250" y="188" class="flow-text small">A + B ?</text>
-          <path class="flow-node node-process" d="M200 236H300V279H200Z"/><text x="250" y="263" class="flow-text">SOUČET</text>
+          <path class="flow-node node-process" d="M200 159H300V204H200Z"/><text x="250" y="186" class="flow-text">S := A + B</text>
+          <path class="flow-node node-io" d="M201 231H315L299 276H185Z"/><text x="250" y="258" class="flow-text">ZOBRAZ S</text>
           <rect class="flow-node node-terminal" x="184" y="309" width="132" height="40" rx="20"/><text x="250" y="334" class="flow-text">KONEC</text>
-          <text class="flow-label" x="302" y="177">ANO</text><text class="flow-label" x="165" y="196">NE</text>
           <circle class="flow-pulse" cx="250" cy="73" r="4" filter="url(#glow)"/>
         </svg>
         <div class="visual-caption"><span><span class="caption-dot"></span> Postup krok za krokem</span><span>1 / 4</span></div>
@@ -122,6 +120,22 @@
     </div></section>
   </main>
 
-  <footer class="footer"><div class="section-shell footer-main"><a class="brand footer-brand" href="#domu"><span class="brand-mark">A<span>.</span></span><span>algoritmy<span class="brand-dot">/</span><span class="brand-light">průvodce</span></span></a><p>Malé kroky. Jasné myšlení.<br>Vzdělávací projekt o algoritmech.</p><div class="footer-links"><a href="citace.md">Zdroje a citace ↗</a><a href="#test">Zkusit test ↑</a></div></div><div class="section-shell footer-bottom"><span>VZDĚLÁVACÍ PROJEKT</span><span>© <span data-year>2026</span> ALGOrITMY</span><span>VYTVOŘENO PRO ZVĚDAVÉ MYSLI <b>✳</b></span></div></footer>
+  <footer class="footer" id="footer">
+    <div class="section-shell footer-main">
+      <a class="brand footer-brand" href="#domu"><span class="brand-mark">A<span>.</span></span><span>algoritmy<span class="brand-dot">/</span><span class="brand-light">průvodce</span></span></a>
+      <p>Malé kroky. Jasné myšlení.<br>Vzdělávací projekt o algoritmech.</p>
+      <div class="footer-links"><a href="citace.md">Zdroje a citace ↗</a><a href="#test">Zkusit test ↑</a></div>
+      <div class="footer-validation" aria-label="Validace stránky">
+        <a class="validator-link" data-validator-html href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer" aria-label="Validovat HTML pomocí W3C Nu HTML Checker">
+          <span class="validator-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6M16 6l6 6-6 6M14 4l-4 16"/></svg></span><span><small>W3C / HTML5</small><strong>Validovat HTML</strong></span><span class="validator-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="validator-link" data-validator-css href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener noreferrer" aria-label="Validovat CSS pomocí W3C CSS Validator">
+          <span class="validator-icon css-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 3h14l-1.4 16L12 21l-5.6-2L5 3Z"/><path d="M9 8h7M9 12h6M9 16h3"/></svg></span><span><small>W3C / CSS3</small><strong>Validovat CSS</strong></span><span class="validator-arrow" aria-hidden="true">↗</span>
+        </a>
+        <p class="validator-status" data-validator-status role="status" aria-live="polite" hidden></p>
+      </div>
+    </div>
+    <div class="section-shell footer-bottom"><span>VZDĚLÁVACÍ PROJEKT</span><span>© <span data-year>2026</span> ALGORITMY</span><span>VYTVOŘENO PRO ZVĚDAVÉ MYSLI <b>✳</b></span></div>
+  </footer>
 </body>
 </html>
